@@ -1,15 +1,11 @@
 .characterEditor {
   padding-top: 128px;
   padding-bottom: 64px;
-}
-
-.maxWidthWrapper {
-  isolation: isolate;
+  position: relative;
 }
 
 .header {
   padding-bottom: 64px;
-  width: 65%;
 }
 
 .title {
@@ -25,17 +21,6 @@
   margin: 0;
 }
 
-.characterWrapper {
-  position: fixed;
-  top: 10%;
-  bottom: 0;
-  right: 0;
-}
-
-.controlColumn {
-  width: 50%;
-}
-
 .perspectiveBar {
   position: fixed;
   height: 40%;
@@ -43,4 +28,39 @@
   left: 0;
   right: 0;
   background-color: hsl(195deg, 20%, 86%);
+}
+
+.controlColumn {
+  position: absolute;
+  z-index: 1;
+  bottom: 25%;
+  display: flex;
+  gap: 32px;
+}
+
+.characterWrapper {
+  position: sticky;
+  top: 32px;
+  left: 32px;
+}
+
+@media (min-width: 1034px) {
+  .maxWidthWrapper {
+    isolation: isolate;
+  }
+  .header {
+    width: 65%;
+  }
+  .controlColumn {
+    position: static;
+    display: block;
+    width: 50%;
+  }
+  .characterWrapper {
+    position: fixed;
+    top: 10%;
+    bottom: 5%;
+    right: 0;
+    left: 65%;
+  }
 }

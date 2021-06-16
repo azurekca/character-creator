@@ -9,3 +9,12 @@
 a {
   color: white;
 }
+
+@media (max-width: 1034px) {
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
